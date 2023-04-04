@@ -1,0 +1,101 @@
+\begin{longtable}{|m{3.7cm}<{\centering}|m{11cm}|}
+    \hline
+    \textbf{element} & \multicolumn{1}{c|}{\textbf{描述}} \\ \hline
+    partners &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 定义正在构建的业务流程与其合作流程之间的关系
+        \item 合作伙伴可以作为
+        \vspace{-0.2em}
+        \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+            \item 提供业务流程所使用的服务的消费者
+            \item 提供被业务流程使用的服务的提供者
+            \item 激活业务流程的服务
+        \end{itemize}
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    partner link types &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 定义两个Web服务之间的对话关系
+        \item 在WSDL中定义，并给出与portType相关联的角色
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    partner links &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 对业务流程与其交互的合作伙伴服务进行建模
+        \item 由partner link type所特征化
+        \item 定义业务流程内的静态关系
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    business partners &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 使用partner元素对需要多个对话关系的业务合作伙伴关系进行建模
+        \item 允许对partner links进行分组
+        \item 禁止重叠
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    endpoint references &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 为服务提供端口特定数据提供动态绑定机制
+        \item 允许将服务提供者与partner links中的角色进行动态绑定
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    activities &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 基本活动，例如接收、回复和调用
+        \item 结构化活动
+        \vspace{-0.2em}
+        \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+            \item 按顺序执行（序列、开关和循环）
+            \item 并发执行（流程）
+            \item 非确定性选择(pick)
+        \end{itemize}
+        \item 属性，名称，连接条件，源，目标
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    data handling &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 在业务流程中建模状态
+        \item 三种处理方式
+        \vspace{-1em}
+        \begin{multicols}{3}
+        \begin{itemize}
+            \item 变量
+            \item 表达式
+            \item 分配
+        \end{itemize}
+        \end{multicols}
+        \vspace{-1.2em}
+        \item 提供XML数据类型和WSDL消息类型
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    Correlation &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 用于处理进程之间长时间的有状态对话
+        \item 用于识别新的业务流程
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+    Scope &
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 每个活动行为的上下文
+        \item 共有五种：故障处理程序、事件处理程序、补偿处理程序、数据变量和相关性集
+    \vspace{-1.5em}
+    \end{itemize}                                           
+    \\ \hline
+\end{longtable}

@@ -1,0 +1,223 @@
+\section{面向服务的架构}
+
+\subsection{面向服务的架构概述}
+面向服务的体系结构(SOA)是一种以业务为中心的IT体系结构方法，它支持将您的业务集成为链接的、可重复的业务任务或服务。SOA可帮助用户构建复合应用程序，复合应用程序是利用来自企业内外多个源的功能来支持水平业务流程的应用程序。
+
+在软件工程中，SOA是一组原则和方法，用于以可互操作服务的形式设计和开发软件。这些服务是定义明确的业务功能，构建为软件组件（离散的代码片段和/或数据结构），可以重用于不同的目的。
+
+\begin{itemize}
+    \item SOA是从架构方面，整体支持面向服务泛型的基本概念性架构模型。
+    \item SOA是一种业务-IT结合的方法。其中，应用依赖于现有的服务来实现业务过程。
+    \item 服务是由服务提供商提供并由服务请求者使用的独立可重用软件组件。
+    \item 实现SOA主要包括：
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 面向服务的企业
+            \item 采用服务开发应用
+            \item 采用服务对应用进行封装，以便今后的复用
+            \item ……
+    \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+\end{itemize}
+
+\begin{wraptable}{r}{6.5cm}
+    \centering
+    \vspace{-2.5em}
+    \includegraphics[width=5.5cm]{images/SOA结构.pdf}
+    \vspace{-1.5em}
+\end{wraptable}
+$\ \checkmark\;$SOA解决方案构建在可从Internet或服务注册表访问的可重用服务之上
+
+$\ \checkmark$以标准方式实现复杂软件系统的互操作性和集成
+
+$\ \checkmark$连接IT和业务需求
+
+SOA三角操作模型
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/SOA三角操作模型.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\subsection{SOA的特点}
+SOA的优点：
+\begin{itemize}
+    \item 从IT角度出发
+    \begin{itemize}
+        \item 松耦合，消除假依赖（复用）：语言、平台和厂商中立；消除时间依赖；消除访问地址依赖；消除访问协议依赖
+        \item 服务间接寻址（灵活）
+    \end{itemize}
+    \item 从业务角度出发
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 保护企业投资，提升现有IT资源的作用，促进IT资源的复用
+            \item 提高企业灵敏度
+            \item 支持企业外包管理模式
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+\end{itemize}
+
+从双角度出发，SOA在不同粒度上提供了本质性的指导：业务层、过程层、中间件层和编程层
+\begin{itemize}
+    \item 在每个层次中间，SOA 按照自顶向下的方式，将一个较大的单元分解为较小、以服务为中心的单元
+    \item 按照自底向上的方式，将可供使用的较小单元组织成为较大的单元，用以提供全新的服务
+\end{itemize}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=\textwidth]{images/SOA双角度.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\begin{itemize}
+    \item 在编程层，SOA可用于指导低级IT技术
+    \begin{itemize}
+        \item 简单对象访问协议(Simple Object Access Protocol, SOAP)
+        \item 用于数据传输的二进制SOAP消息传递
+        \item 服务组件体系结构(Service Component Architecture, SCA，一种编程模型)
+    \end{itemize}
+    \item 在中间件层，SOA可用于指导通用产品和开源软件的设计和开发
+    \begin{itemize}
+        \item 从不同的模型中进行选择：例如ESB (Enterprise Service Bus，单个企业服务总线)或多个 ESB、面向消息或基于事件的基础架构
+    \end{itemize}
+    \item 在过程层，SOA可用于指导业务流程集成和管理，以及事件驱动架构的设计
+    \item 在业务层，SOA可用于组件化企业并支持高级转型咨询
+    \begin{itemize}
+        \item 帮助高管决定是使用SOA服务包实现业务流程，还是使用SOA概念将业务流程划分为子流程
+    \end{itemize}
+\end{itemize}
+
+\vspace{-0.5em}
+\begin{shaded}
+\subsubsection*{企业服务总线(ESB)}
+\begin{itemize}
+    \item ESB是一个概念性的软件基础结构，它促进服务组件及其交互的动态集成、消息路由、中介和控制。
+    \item 与通用对象请求代理体系结构(CORBA)对象总线相比，它集成了面向对象的软件组件和Java 2平台企业版(J2EE)应用程序服务器；ESB 在概念上集成了服务和服务组件。
+    \item ESB提供了一个基础结构，从集成和消息传递的角度支持服务组件的互操作性和可重用性。
+\end{itemize}
+
+ESB的基本形式：
+\vspace{-0.8em}
+\begin{multicols}{4}
+    \begin{itemize}
+        \item 集成
+        \item 消息路由
+        \item 转换
+        \item 管理
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+高级ESB通常提供许多额外的增值功能：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 用于服务发现和配置的工具
+        \item 根据性能和错误事件动态调整服务级别协议
+        \item 高级Web服务发现
+        \item 适用于现有或新兴技术的特定适配器
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/ESB.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\end{shaded}
+\vspace{-1em}
+
+\subsection{SOA参考架构}
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/SOA参考架构.pdf}
+    \vspace{-1em}
+\end{figure}
+
+水平层：对功能性需求加以满足，五个水平层分为服务提供者和服务消费者两组：
+\begin{itemize}
+    \item 服务提供者（后台）
+\end{itemize}
+\begin{spacing}{1.2}
+    \input{tables/SOA水平层服务提供者.tex}
+    \vspace{-2.5em}
+\end{spacing}
+
+\begin{itemize}
+    \item 服务消费者（前台）
+\end{itemize}
+
+\begin{spacing}{1.15}
+    \input{tables/SOA水平层服务消费者.tex}
+    \vspace{-1em}
+\end{spacing}
+
+\begin{figure}[H]
+	\setcounter{subfigure}{0}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat[编排]{
+	\begin{minipage}[t]{0.46\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/编排.pdf}
+	\end{minipage}
+	}
+    \hfill
+	\subfloat[编导]{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/编导.pdf}
+	\end{minipage}
+	}
+	\centering
+	\vspace{-1em}
+\end{figure}
+
+垂直层：对当前系统进行支撑以及实现服务质量、非功能性需求
+\begin{spacing}{1.15}
+    \input{tables/SOA垂直层.tex}
+    \vspace{-2em}
+\end{spacing}
+
+\begin{itemize}
+    \item SOA-RA 展示了如何将 SOA 解决方案构建为一组逻辑层的抽象。
+    \item SOA-RA 是一种松耦合的架构，因为每个层不严格隐藏在上面的层之中。
+    \item SOA-RA 是一个企业级架构模板，通过定义参考架构指导在企业级别上创建 SOA 解决方案。
+    应用 SOA-RA 模型来定义 SOA 导向的系统架构的一种实践称为服务导向建模和架构（SOMA）。
+    \item 在SOA-RA层中配置组件定义了三个步骤：
+    \vspace{-0.8em}
+    \begin{multicols}{3}
+    \begin{itemize}
+        \item 服务识别步骤
+        \item 服务规范步骤
+        \item 服务实现步骤
+    \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+\end{itemize}
+
+\subsection{SOA解决方案生命周期}
+服务的生命周期是指从服务开始构思到该服务不再使用时结束的时间段。
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/SOA Solution Lifecycle.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\vspace{-0.5em}
+\begin{spacing}{1.2}
+\centering
+    \input{tables/SOA解决方案生命周期.tex}
+\end{spacing}
+

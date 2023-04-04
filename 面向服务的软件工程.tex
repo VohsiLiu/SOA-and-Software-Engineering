@@ -1,0 +1,229 @@
+\documentclass[cs4size,a4paper,10pt]{ctexart}   
+
+\linespread{1.5}
+\usepackage{geometry}%用于设置上下左右页边距
+	\geometry{left=2.5cm,right=2.5cm,top=3.2cm,bottom=2.7cm}
+\usepackage{xeCJK,amsmath,paralist,enumerate,booktabs,multirow,graphicx,subfig,setspace,listings,lastpage,hyperref}
+\usepackage{amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+\usepackage{mathrsfs}  
+	\setlength{\parindent}{2em}
+	\lstset{language=Matlab}%
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfloat}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{paralist}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{autobreak}
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{unicode-math}
+\usepackage{ltxtable, filecontents}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{lipsum}
+\usepackage{microtype}
+\usepackage{wrapfig}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{vwcol}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\setenumerate{partopsep=0pt,topsep=0pt,itemsep=0pt,leftmargin=2em}
+\setitemize{itemsep=0pt,partopsep=0pt,topsep=0pt,leftmargin=2em}
+
+\titlespacing*{\section}{0pt}{3pt}{3pt}
+\titlespacing*{\subsection}{0pt}{2pt}{2pt}
+\titlespacing*{\subsubsection}{0pt}{1pt}{1pt}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+
+\ctexset{secnumdepth=4,tocdepth=4}
+\setlength{\parindent}{0pt}
+\setstretch{1.3}
+
+\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01} 
+\setCJKsansfont[BoldFont={FZHei-B01}]{FZKai-Z03} 
+\setCJKmonofont[BoldFont={FZHei-B01}]{FZFangSong-Z02}
+\setCJKfamilyfont{zhsong}{FZShuSong-Z01} 
+\setCJKfamilyfont{zhhei}{FZHei-B01} 
+\setCJKfamilyfont{zhkai}[BoldFont={FZHei-B01}]{FZKai-Z03} 
+\setCJKfamilyfont{zhfs}[BoldFont={FZHei-B01}]{FZFangSong-Z02} 
+\renewcommand*{\songti}{\CJKfamily{zhsong}} 
+\renewcommand*{\heiti}{\CJKfamily{zhhei}} 
+\renewcommand*{\kaishu}{\CJKfamily{zhkai}} 
+\renewcommand*{\fangsong}{\CJKfamily{zhfs}}
+
+
+\definecolor{mKeyword}{RGB}{0,0,255}          % bule
+\definecolor{mString}{RGB}{160,32,240}        % purple
+\definecolor{mComment}{RGB}{34,139,34}        % green
+\definecolor{mNumber}{RGB}{128,128,128} 
+
+\lstdefinestyle {njulisting} {
+	basewidth = 0.5 em,
+	lineskip = 3 pt,
+	basicstyle = \small\ttfamily,
+	% keywordstyle = \bfseries,
+	commentstyle = \itshape\color{gray}, 
+	basicstyle=\small\ttfamily,
+	keywordstyle={\color{black}},     % sets color for keywords
+	stringstyle={\color{black}},       % sets color for strings
+	commentstyle={\color{black}},     % sets color for comments
+	numberstyle=\tiny\color{black},
+	numbers = left,
+	captionpos = t,
+	breaklines = true,
+	xleftmargin = 1.2 em,
+	xrightmargin = 0 em,
+	frame=tlrb,
+	tabsize=4,
+	aboveskip = 7 pt, %与代码环境上一行的垂直间距
+    belowskip = -2 pt %与代码环境下一行的垂直间距
+}
+
+\lstset{
+style = njulisting, % 调用上述样式 
+flexiblecolumns % 允许调整字符宽度
+}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommand \sverb {\;\verb}
+\definecolor{shadecolor}{rgb}{0.96,0.96,0.96}
+
+%================= 基本格式预置 ===========================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\textsc{SOA and Software Engineering}}
+\rhead{面向服务的软件工程}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\theenumi}{(\arabic{enumi})}
+\CTEXsetup[format={\bfseries\zihao{-3}}]{section}
+\CTEXsetup[format={\bfseries\zihao{4}}]{subsection}
+\CTEXsetup[format={\bfseries\zihao{-4}}]{subsubsection}
+
+\renewcommand{\arraystretch}{1.23} %表格文字与表格线的距离
+
+\renewcommand{\contentsname}{目录}  
+\begin{document}
+
+	\begin{center}
+		{\huge\textbf{面向服务的软件工程}}
+	\end{center}
+	%---------目录---------% 
+	\pagenumbering{Roman}
+	\tableofcontents
+	\clearpage
+
+ 	%---------正文---------% 
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	\setlength{\parskip}{0.45em}
+
+	\setlength\abovedisplayskip{5pt}
+	\setlength\belowdisplayskip{5pt}
+
+	\include{服务与服务系统.tex}
+	\include{服务生态系统与面向服务的计算.tex}
+	\include{面向服务的架构.tex}
+	\include{面向服务中的信息交换和数据类型.tex}
+	\include{服务模型.tex}
+	\include{Web Service的发布和查询.tex}
+	\include{WS-*协议.tex}
+
+\end{document}
+
+
+% \begin{figure}[H]
+%     \vspace{-0.5em}
+% 	\centering
+% 	\includegraphics[width=0.4\textwidth]{images/}
+%     \vspace{-1em}
+% \end{figure}
+
+
+% \vspace{-0.8em}
+% \begin{multicols}{2}
+%     \begin{itemize}
+%         \item 
+%     \end{itemize}
+% \end{multicols}
+% \vspace{-1em}
+
+
+% \vspace{-0.5em}
+% \begin{spacing}{1.2}
+%     \centering
+%     \begin{longtable}{|W{c}{2.5cm}|W{c}{3.8cm}|W{c}{4.2cm}|m{4cm}<{\centering}|}
+% 		表格内容
+% 		表头居中方式  \multicolumn{1}{c|}{表头内容} 
+%     \end{longtable}
+% 	\end{spacing}
+% \vspace{-1em}
+
+
+% \begin{figure}[htbp]
+% 	\setcounter{subfigure}{0}
+% 	\centering
+% 	\vspace{-0.5em}	
+% 	\subfloat[]{
+% 	\begin{minipage}[t]{0.33\linewidth}
+% 	\centering
+% 	\includegraphics[width=0.97\linewidth]{}
+% 	\end{minipage}
+% 	}
+% 	\subfloat[]{
+% 	\begin{minipage}[t]{0.33\linewidth}
+% 	\centering
+% 	\includegraphics[width=0.97\linewidth]{}
+% 	\end{minipage}
+% 	}
+% 	\centering
+% 	\vspace{-1em}
+% 	\caption{}
+% \end{figure}
+
+
+% \begin{wraptable}{r}{6.5cm}
+%     \centering
+%     \vspace{-1.5em}
+%     \begin{tabular}{|c|c|}
+%     \hline
+%     期望的确定性 & 确定性因子 \\ \hline
+%     95\% & 1.960  \\ \hline
+%     90\% & 1.645  \\ \hline
+%     85\% & 1.281  \\ \hline
+%     \end{tabular}
+%     \caption*{常见的确定性因子}
+%     \vspace{-1.5em}
+% \end{wraptable}
+% 下面必须紧跟浮动体
+
+
+% \vspace{-0.5em}
+% \begin{shaded}
+
+% \end{shaded}
+% \vspace{-1em}
+
+
+% 设定尺寸单位
+% \setlength{\TPHorizModule}{\textwidth}
+% \setlength{\TPVertModule}{\textwidth}
+
+% \begin{textblock}{0.4}(0.85,1)
+
+% \end{textblock}

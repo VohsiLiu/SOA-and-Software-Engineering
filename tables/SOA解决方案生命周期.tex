@@ -1,0 +1,50 @@
+\begin{longtable}{|m{2.5cm}<{\centering}|m{12cm}|}
+    \hline
+    服务模型(Services modeling) & 
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 使用概念建模技术设计服务
+        \item 基于WSDL的自顶向下分解方法是一种服务建模方法
+        \item 该方法与传统的接口优先设计方法没有区别
+        \item OMG\footnote{OMG(Object Management Group)，它是一个国际性的计算机工业标准组织，负责制定和维护各种计算机标准，包括UML和MDA等。该组织致力于推广面向对象技术和相关标准，并促进不同系统之间的互操作性。}的基于UML的模型驱动架构（MDA）可以用于使用Web服务和SOA建模业务解决方案的复杂性
+    \vspace{-1.5em}
+    \end{itemize} \\ \hline
+    开发(Development) & 
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 服务的详细实现可以使用任何编程语言来实现（例如Java、C\#和C++）
+        \item 服务的开发阶段涉及典型软件生命周期的几个阶段，包括设计、开发和测试
+        \item 软件开发方法论可以用于指导开发过程
+    \vspace{-1.5em}
+    \end{itemize} \\ \hline
+    Deployment & \multicolumn{1}{c|}{部署}  \\ \hline
+    Publishing & \multicolumn{1}{c|}{发布}  \\ \hline
+    Discovery & \multicolumn{1}{c|}{发现服务}  \\ \hline
+    调用(Invocation) & 
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 通常情况下，服务请求者和服务提供者会就服务级别协议（SLA）进行协商
+        \item 在达成共识之后，服务请求者调用所需的Web服务，并在服务提供者现场远程执行服务
+        \item SOAP是承载请求和响应的典型协议，需要进行信息的编组和解组
+    \vspace{-1.5em}
+    \end{itemize} \\ \hline
+    组合(Composition) & 
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 自适应地将一组可用的Web服务组合成业务流程。
+        \item BPEL4WS\footnote{Business Process Execution Language for Web Services，即Web服务业务流程执行语言。它是一种基于XML的编程语言，用于描述在Web服务环境中运行的业务流程，可以协调多个Web服务的协作，实现复杂的业务逻辑。}和Web服务编排接口（WSCI）用于描述这种组合。
+    \vspace{-1.5em}
+    \end{itemize} \\ \hline
+    协作(Collaboration) & 在一个全面的业务流程中，通常会有多个服务由不同的服务提供者提供和调用。
+    为了协调它们，它们之间的信息交换和协作是必要的。 \\ \hline
+    通过分析控制进行监控和管理(Monitoring and Management with analytical control) & 
+    \vspace{-1.3em}
+    \begin{itemize}[leftmargin=1.5em,itemsep=-2pt]
+        \item 在网络环境中，应监控和控制Web服务的执行
+        \item 包括访问控制、性能监控、服务级别协议（SLA）执行和异常处理
+        \item 我们应该在涉及多个方的分布式环境中监控和跟踪交换信息的状态
+        \item 这个过程可能跨越多个组织，因此需要联合访问控制策略
+        \item 进行数据分析和信息分析以改进
+    \vspace{-1.5em}
+    \end{itemize} \\ \hline
+\end{longtable}

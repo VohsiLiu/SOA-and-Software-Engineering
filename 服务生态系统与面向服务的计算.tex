@@ -1,0 +1,239 @@
+\section{服务生态系统与面向服务的计算}
+
+\subsection{服务生态系统}
+
+面向服务的应用逻辑，遵循面向服务的设计原则，采用服务和服务组合加以实现。
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/面向服务的应用逻辑.png}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{服务组合}
+服务组合由多个装配在一起的服务所构成，用以提供对业务任务或过程进行实现的功能。
+
+由于面向服务倾向于将服务打造为无关的企业资源，一个服务可能被多个消费者程序所调用，它们能在不同的服务组合中组合同一个服务。
+
+
+\subsubsection{服务库存}
+服务库存，是在组织或组织的合理部分边界内一组独立标准化并治理的完备服务。
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/服务库存与服务组合.png}
+    \vspace{-1em}
+\end{figure}
+
+服务库存可以按照服务模型进行分层：
+\begin{itemize}
+    \item 应用服务层：紧密和实现相关的较小功能单元抽象出来的服务。
+    \item 业务服务层：直接满足调用者、消费者需求的服务
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 以任务为中心的业务服务（任务服务）
+            \item 以实体为中心的业务服务（实体服务）
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+    \item 编排服务层：（可选的服务层）服务组合的一种实现，一般由领域专家实现，使用平台中立语言（文本化的标记语言，一般为 XML）来描述服务组合的业务逻辑。
+\end{itemize}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/服务模型.png}
+    \vspace{-1em}
+\end{figure}
+
+在构建前，服务库存的蓝图就已设计完毕了。
+
+服务库存的演化阶段：
+\begin{itemize}
+    \item 初始服务交付项目（按需开发）：服务是中立的，独立于当前软件系统，独立于调用它的服务系统或应用。
+    \item 混合应用和成长中的服务库存：服务的数量持续增长，服务组合的可能性也持续增长，但是服务库存仍然尚未完成。
+    \item 服务库存基本构建完毕：服务库存的演化基本完成。随着服务库存的增长，潜在的服务组合的复杂度也随之提升。
+\end{itemize}
+
+
+\subsubsection{服务生态系统}
+当服务库存按照面向服务的方式进行良好的规划和设计、经过长时间演化、已经基本完备；该组织的服务系统均已合理地转向面向服务的实现，那么该组织内的服务生态系统就被构建起来了。
+
+包含分析、设计、实现、治理、演化等……
+\begin{itemize}
+    \item 治理：由于共享计算，通过网络以统一的接口调用服务，故需要提供相应的计算资源，来尽量满足所有人的需求。
+\end{itemize}
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 兼容性演化：接口不变，后台实现发生变化
+        \item 非兼容性演化：接口也需要改变
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+从消费者角度出发：
+\begin{itemize}
+    \item 可以被同时、独立调用的，用于满足消费者需求的服务被称为垂直服务（消费者直接调用的服务）。
+    \item 垂直服务可以由多个可重用的跨领域的公共服务所构成，这些服务被称为水平服务（不直接被消费者调用的服务）。
+    \item 垂直服务和水平服务不是互斥的；二者的区别的唯一标准就在于在某一特定场景下，是否被消费者直接调用。当水平服务被消费者直接调用时，就是也是作为垂直服务。
+\end{itemize}
+
+
+\subsection{服务计算}
+
+\subsubsection{服务计算的定义}
+服务计算也叫面向服务的计算(SOC)
+\begin{itemize}
+    \item 从泛型角度出发：面向服务的计算是一种新型计算泛型。该泛型以服务作为基本概念，以支持快速和低成本开发，和异构环境中分布式应用的灵活组合。
+    \item 从软件架构角度出发：面向服务的计算是一组使用面向服务的架构(SOA)来表达计算的概念、原理和方法。在面向服务的架构中，使用带有标准接口的独立构件服务来构造软件应用。
+    \item  从服务角度出发：为了在业务服务和IT服务之间建立连接，并进一步改进业务服务，面向服务的计算涵盖了运用计算和信息技术建模、创建、操作和管理业务服务的科学和技术。
+    \item 从软件工程的角度出发：面向服务的计算盖了使用服务作为基本抽象元素，采用工程化方法，对服务系统进行分析、设计、开发、测试、部署、管理等活动所涉及的理论、技术和方法。
+\end{itemize}
+
+\subsubsection{面向服务与面向服务的目标}
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=\textwidth]{images/面向服务的目标.pdf}
+    \vspace{-2em}
+\end{figure}
+
+
+\subsection{面向服务与面向对象}
+
+\subsubsection{面向服务与面向对象的对比}
+\input{tables/面向服务与面向对象.tex}
+
+从设计角度和实现角度来看
+\input{tables/从设计角度对比面向服务和面向对象.tex}
+
+\subsubsection{对象/类/接口与服务合约}
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/对象、类、接口与服务合约.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{面向对象设计原则之于面向服务}
+面向对象的基本原则
+\vspace{-0.8em}
+\begin{multicols}{4}
+    \begin{spacing}{1.1}
+        \begin{itemize}
+            \item 封装
+            \item 继承
+            \item 泛化和特化
+            \item 抽象
+            \item 多态
+            \item 开闭原则
+            \item 别重复你自己
+            \item 单一职责原则
+            \item 委托
+            \item 关联
+            \item 组合
+            \item 聚合
+        \end{itemize}
+    \end{spacing}
+\end{multicols}
+\vspace{-1em}
+
+\begin{figure}[H]
+	\setcounter{subfigure}{0}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat[封装]{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/封装.png}
+	\end{minipage}
+	}
+    \hfill
+	\subfloat[泛化和特化]{
+	\begin{minipage}[t]{0.44\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/泛化和特化.png}
+	\end{minipage}
+	}
+
+    \subfloat[抽象]{
+	\begin{minipage}[t]{0.31\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/抽象.png}
+	\end{minipage}
+	}
+	\subfloat[继承]{
+	\begin{minipage}[t]{0.31\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/继承.png}
+	\end{minipage}
+	}
+    \subfloat[多态]{
+	\begin{minipage}[t]{0.31\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/多态.png}
+	\end{minipage}
+	}
+    
+	\subfloat[开闭原则]{
+	\begin{minipage}[t]{0.53\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/开闭原则.png}
+	\end{minipage}
+	}
+    \hfill
+	\subfloat[别重复你自己]{
+	\begin{minipage}[t]{0.4\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/别重复你自己.png}
+	\end{minipage}
+	}
+
+    \subfloat[委托]{
+	\begin{minipage}[t]{0.73\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/委托.png}
+	\end{minipage}
+	}
+	\centering
+	\vspace{-1em}
+\end{figure}
+
+\begin{figure}[H]
+	\setcounter{subfigure}{8}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat[关联]{
+	\begin{minipage}[t]{0.75\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/关联.png}
+	\end{minipage}
+	}
+
+    \subfloat[单一职责原则]{
+	\begin{minipage}[t]{0.8\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/单一职责原则.png}
+	\end{minipage}
+	}
+
+    \subfloat[聚合]{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/聚合.png}
+	\end{minipage}
+	}
+    \hfill
+    \subfloat[组合]{
+	\begin{minipage}[t]{0.4\linewidth}
+	\centering
+	\includegraphics[width=0.97\linewidth]{images/组合.png}
+	\end{minipage}
+	}
+	\centering
+	\vspace{-1em}
+\end{figure}
